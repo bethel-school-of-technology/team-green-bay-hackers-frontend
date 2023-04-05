@@ -12,15 +12,19 @@ export class GroceryService {
 
   constructor(private http: HttpClient) { }
 
-  getGroceryItems(): Observable<Grocery[]> {
+  getItems(): Observable<Grocery[]> {
     return this.http.get<Grocery[]>(this.URL);
   }
 
-  addGroceryItem(newItem: Grocery) {
+  addItem(newItem: Grocery) {
     return this.http.post(this.URL, newItem);
   }
 
   updateItem(newItem: Grocery) {
     return this.http.put<Grocery[]>(`${this.URL}/${newItem.listId}`, newItem)
+  }
+
+  deleteItem(itemId: string) {
+    return this.http.delete<any>(`${this.URL}/${itemId}`)
   }
 }
