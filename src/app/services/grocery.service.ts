@@ -20,4 +20,7 @@ export class GroceryService {
     return this.http.post(this.URL, newItem);
   }
 
+  updateItem(newItem: Grocery) {
+    return this.http.put<Grocery[]>(`${this.URL}/${newItem.listId}`, newItem)
+  }
 }
