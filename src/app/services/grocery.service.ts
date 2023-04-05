@@ -11,4 +11,13 @@ export class GroceryService {
   URL: string = "localhost.example"
 
   constructor(private http: HttpClient) { }
+
+  getGroceryItems(): Observable<Grocery[]> {
+    return this.http.get<Grocery[]>(this.URL);
+  }
+
+  addGroceryItem(newItem: Grocery) {
+    return this.http.post(this.URL, newItem);
+  }
+
 }
