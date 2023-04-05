@@ -1,0 +1,15 @@
+<mat-toolbar class="toolbar">
+    <img src="https://www.guffincreative.com/wp-content/uploads/2023/04/good-eats-logo.svg" alt="Logo" class="logo">
+  
+    <div class="spacer"></div>
+  
+    <button mat-button class="menu-button" [matMenuTriggerFor]="menu">
+        <mat-icon>menu</mat-icon>
+      </button>
+    
+      <mat-menu class="mat-menu" #menu="matMenu">
+        <button mat-menu-item>Recipes</button>
+        <button mat-menu-item>Groceries</button>
+        <button mat-menu-item>Profile</button>
+      </mat-menu>
+  </mat-toolbar>

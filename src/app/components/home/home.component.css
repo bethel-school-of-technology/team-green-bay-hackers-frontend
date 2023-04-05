@@ -1,0 +1,19 @@
+.toolbar {
+    background-color: white;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+}
+
+.nav-items {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.logo {
+    height: 40px;
+    margin-right: 16px;
+  }
+  
+  .spacer {
+    flex: 1 1 auto;
+  }
