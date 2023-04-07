@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 export class GroceryService {
 
   URL: string = "localhost.example"
+  //tokenKey: string = "myGroceryToken";
 
   constructor(private http: HttpClient) { }
 

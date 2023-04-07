@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { HomeComponent } from './components/home/home.component';
+import { GroceryNewComponent } from './components/grocery-new/grocery-new.component';
 
 const routes: Routes = [
 
@@ -19,7 +20,11 @@ const routes: Routes = [
   {
     path: "sign-in",
     component: SignInComponent //Jaedyn
-  }
+  },
+  {
+    path: "grocery-new",
+    component: GroceryNewComponent
+  },
 ];
 
 @NgModule({
