@@ -20,7 +20,7 @@ export class SignInComponent {
 
   signin(){
     this.userService.signIn(this.email, this.password).subscribe((response:any) => {
-      this.router.navigateByUrl('/Placeholder');
+      this.router.navigateByUrl('/signin');
     }, error => {
       console.log('Error: ', error);
       window.alert('Unsuccessful Login');

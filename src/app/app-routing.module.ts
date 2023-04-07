@@ -9,15 +9,15 @@ const routes: Routes = [
   { 
     path: "" , redirectTo: "home" , pathMatch: "full" //Blake
   },
-  { 
-    path: "home" , component: HomeComponent //Blake
-  },
+  // { 
+  //   path: "home" , component: HomeComponent //Blake
+  // },
   {
-    path: "signup",
+    path: "sign-up",
     component: SignUpComponent //Jaedyn
   },
   {
-    path: "signin",
+    path: "sign-in",
     component: SignInComponent //Jaedyn
   }
 ];
