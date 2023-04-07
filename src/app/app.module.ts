@@ -15,13 +15,16 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
+// import { ItemNewComponent } from './components/item-new/item-new.component';
+import { GroceryNewComponent } from './components/grocery-new/grocery-new.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignUpComponent,//Jaedyn
     SignInComponent,//Jaedyn
-    HomeComponent // Blake
+    HomeComponent, // Blake
+    GroceryNewComponent //Jaedyn
   ],
   imports: [
     BrowserModule,

@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class SignUpComponent implements OnInit{
 
-  newUser: User = new User();
+  public newUser: User = new User();
 
   constructor(private userService: UserService, private router: Router) { }
 
