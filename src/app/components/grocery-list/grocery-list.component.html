@@ -1,0 +1,10 @@
+<h1>Grocery List</h1>
+<a [routerLink]="['grocery-new']">Create New Grocery List Item</a>
+<div *ngIf="groceryList">
+    <div *ngFor="let Grocery of groceryList">
+        <h2>{{Grocery.listId}} {{Grocery.listItem}}</h2>
+        <p>{{Grocery.inCart}}</p>
+        
+        <hr>
+    </div>
+</div>
