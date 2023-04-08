@@ -11,12 +11,14 @@ import { Observable } from 'rxjs';
 export class SearchComponent {
 
 recipeList: Recipe[] = [];
-searchSource: string = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=76f259eae67a4d039792ab892368b232&ingredients=apples,+flour,+sugar&number=1"
+searchSource: string = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=76f259eae67a4d039792ab892368b232&ingredients="
+// search input strin needs to be the input of the saerch bar.
+searchInput: string = "chicken";
 
 constructor(private http: HttpClient) { }
 
 findRecipe(): Observable<Recipe[]> {
-  return this.http.get<Recipe[]>(this.searchSource);
+  return this.http.get<Recipe[]>(this.searchSource + this.searchInput);
 }
 
 searchRecipe(): void {
@@ -25,5 +27,6 @@ searchRecipe(): void {
     this.recipeList = response;
   })
 }
+
 
 }
