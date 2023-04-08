@@ -9,6 +9,7 @@ import { GroceryService } from 'src/app/services/grocery.service';
   styleUrls: ['./grocery-new.component.css']
 })
 export class GroceryNewComponent {
+  
   newGrocery: Grocery = new Grocery();
 
   constructor(private groceryService: GroceryService, private router: Router) { }
@@ -19,7 +20,7 @@ export class GroceryNewComponent {
   addGrocery() {
     this.groceryService.addItem(this.newGrocery).subscribe(() => {
       window.alert("Created Grocery Successfully");
-      this.router.navigate(['grocery']); //Where does this route to?
+      this.router.navigate(['grocery']); //Where does this route to? // We honestly need this to stay on the same page, right? - Blake // and add the new grocery item beneath the form
     }, error => {
       console.log('Error: ', error)
       if (error.status === 401 || error.status === 403) {

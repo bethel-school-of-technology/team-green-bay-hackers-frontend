@@ -18,6 +18,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
 // import { ItemNewComponent } from './components/item-new/item-new.component';
 import { GroceryNewComponent } from './components/grocery-new/grocery-new.component';
 import { SearchComponent } from './components/search/search.component';
+import { MatCardModule } from '@angular/material/card';
+
+
 
 @NgModule({
   declarations: [
@@ -37,7 +40,8 @@ import { SearchComponent } from './components/search/search.component';
     MatIconModule,
     MatMenuModule,
     MatGridListModule,
-    MatListModule
+    MatListModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

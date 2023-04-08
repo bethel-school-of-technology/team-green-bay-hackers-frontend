@@ -1,5 +1,5 @@
 <mat-toolbar class="toolbar">
-    <img src="https://www.guffincreative.com/wp-content/uploads/2023/04/good-eats-logo.svg" alt="Logo" class="logo">
+    <a href ="/recipes"><img src="https://www.guffincreative.com/wp-content/uploads/2023/04/good-eats-logo.svg" alt="Logo" class="logo"></a>
   
     <div class="spacer"></div>
   
@@ -8,9 +8,8 @@
     </button>
     
       <mat-menu class="mat-menu" #menu="matMenu">
-        <button mat-menu-item>Recipes</button>
-        <button mat-menu-item>Groceries</button>
-        <button mat-menu-item>Profile</button>
+        <a href="/recipes"><button mat-menu-item>Recipes</button></a>
+        <a href="/grocery-list"><button mat-menu-item>Grocery List</button></a>
       </mat-menu>
   </mat-toolbar>
   <router-outlet></router-outlet>
