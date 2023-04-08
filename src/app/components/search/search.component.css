@@ -56,3 +56,27 @@
   .hero-search button[type="submit"]:hover {
     background-color: #fff5ee;
   }
+
+  .recipe-card {
+    margin: 15px;
+    max-width: 30%;
+    display: block;
+    float: left;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.example-card:hover {
+    box-shadow: 1px 1px 5px 1px rgb(136, 136, 136);
+    cursor: pointer;
+}
+
+.recipe-image {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.recipe-area {
+    margin: 1% 1% 1% 1%;
+}

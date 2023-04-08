@@ -9,13 +9,13 @@ import { SearchComponent } from './components/search/search.component';
 const routes: Routes = [
 
   { 
-    path: "" , redirectTo: "home" , pathMatch: "full" //Blake
+    path: "" , redirectTo: "recipes" , pathMatch: "full" //Blake
   },
   // { 
   //   path: "home" , component: HomeComponent //Blake
   // },
   {
-    path: "search",
+    path: "recipes",
     component: SearchComponent
   },
   {
@@ -27,7 +27,7 @@ const routes: Routes = [
     component: SignInComponent //Jaedyn
   },
   {
-    path: "grocery-new",
+    path: "grocery-list",
     component: GroceryNewComponent
   },
 ];
