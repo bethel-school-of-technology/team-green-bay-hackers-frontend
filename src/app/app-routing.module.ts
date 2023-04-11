@@ -5,18 +5,20 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { HomeComponent } from './components/home/home.component';
 import { GroceryNewComponent } from './components/grocery-new/grocery-new.component';
 import { SearchComponent } from './components/search/search.component';
+import { RecipeDetailsComponent } from './components/recipe-details/recipe-details.component';
 
 const routes: Routes = [
 
   { 
     path: "" , redirectTo: "recipes" , pathMatch: "full" //Blake
   },
-  // { 
-  //   path: "home" , component: HomeComponent //Blake
-  // },
   {
     path: "recipes",
     component: SearchComponent
+  },
+  {
+    path: "recipes/:id",
+    component: RecipeDetailsComponent
   },
   {
     path: "sign-up",

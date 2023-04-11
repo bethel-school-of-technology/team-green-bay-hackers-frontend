@@ -19,6 +19,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { GroceryNewComponent } from './components/grocery-new/grocery-new.component';
 import { SearchComponent } from './components/search/search.component';
 import { MatCardModule } from '@angular/material/card';
+import { RecipeDetailsComponent } from './components/recipe-details/recipe-details.component';
 
 
 
@@ -28,7 +29,7 @@ import { MatCardModule } from '@angular/material/card';
     SignUpComponent,//Jaedyn
     SignInComponent,//Jaedyn
     HomeComponent, // Blake
-    GroceryNewComponent, SearchComponent //Jaedyn
+    GroceryNewComponent, SearchComponent, RecipeDetailsComponent //Jaedyn
   ],
   imports: [
     BrowserModule,
