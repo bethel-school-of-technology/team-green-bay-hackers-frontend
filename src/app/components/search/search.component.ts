@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Recipe } from 'src/app/models/recipe';
 import { RecipeService } from 'src/app/services/recipe.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-search',
@@ -9,14 +10,23 @@ import { RecipeService } from 'src/app/services/recipe.service';
 })
 export class SearchComponent {
 
-recipeList: Recipe[] = [];
+  recipeList: Recipe[] = [];
 
-constructor(public recipeService: RecipeService) { }
+  searchText: string = "";
 
-searchRecipe(): void {
-  this.recipeService.findRecipe().subscribe(response => {
-    console.log(response);
-    this.recipeList = response;
-  })
+  constructor(public recipeService: RecipeService) { }
+
+  searchRecipe(form: NgForm): void {
+    
+    this.recipeService.findRecipe(form.value.search).subscribe(response => {
+      console.log(response);
+      this.recipeList = response;
+    })
+  }
+
+  onSearchTextEntered(searchValue: string){
+    this.searchText = searchValue;
+    console.log(this.searchText)
+  }
 }
-}
+
