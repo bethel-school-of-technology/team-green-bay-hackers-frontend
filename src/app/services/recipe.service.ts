@@ -8,14 +8,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RecipeService {
 
-  searchSource: string = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=76f259eae67a4d039792ab892368b232&ingredients=apple"
+  searchSource: string = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=76f259eae67a4d039792ab892368b232"
   searchIdSource: string = "https://api.spoonacular.com/recipes/"
-  searchInput: string = "";
+  searchInputParam: string = "&ingredients=";
 
   constructor(private http: HttpClient) { }
 
-findRecipe(): Observable<Recipe[]> {
-  return this.http.get<Recipe[]>(this.searchSource + this.searchInput);
+findRecipe(searchInput: string): Observable<Recipe[]> {
+  return this.http.get<Recipe[]>(this.searchSource + this.searchInputParam + searchInput);
 }
 
 findRecipeById(id: number): Observable<Recipe> {
