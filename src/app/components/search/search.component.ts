@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Recipe } from 'src/app/models/recipe';
 import { RecipeService } from 'src/app/services/recipe.service';
+import { debounceTime, delay, distinctUntilChanged, switchMap } from "rxjs";
 
 @Component({
   selector: 'app-search',
@@ -9,14 +11,14 @@ import { RecipeService } from 'src/app/services/recipe.service';
 })
 export class SearchComponent {
 
-recipeList: Recipe[] = [];
+  public recipeList: Recipe[] = [];
 
-constructor(public recipeService: RecipeService) { }
+  constructor(public recipeService: RecipeService) { }
 
-searchRecipe(): void {
-  this.recipeService.findRecipe().subscribe(response => {
-    console.log(response);
-    this.recipeList = response;
-  })
-}
+  recipeSearch(): void {
+this.recipeService.findRecipe()
+          .subscribe((response) => {
+            this.recipeList = response;
+          })
+  }
 }

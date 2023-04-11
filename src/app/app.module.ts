@@ -20,6 +20,7 @@ import { GroceryNewComponent } from './components/grocery-new/grocery-new.compon
 import { SearchComponent } from './components/search/search.component';
 import { MatCardModule } from '@angular/material/card';
 import { RecipeDetailsComponent } from './components/recipe-details/recipe-details.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -42,7 +43,8 @@ import { RecipeDetailsComponent } from './components/recipe-details/recipe-detai
     MatMenuModule,
     MatGridListModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
