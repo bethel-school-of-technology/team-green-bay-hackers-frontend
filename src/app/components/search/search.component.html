@@ -2,10 +2,26 @@
     <div class="hero-content">
       <h1 class="hero-title">Find Your Next Favorite Dish</h1>
       <h2 class="hero-subtitle">Your Ultimate Recipe Search Engine</h2>
-      <form class="hero-search">
-        <input type="text" placeholder="Search...">
+      <form #myForm="ngForm" class="hero-search" (ngSubmit)="searchRecipe(myForm)">
+        <input type="text" placeholder="Search..." id="search" name="search" ngModel>
         <button type="submit">Search</button>
-      </form>
+        </form>
     </div>
   </section>
-  
+
+ <div class="recipe-area" *ngFor="let recipe of recipeList">
+    <mat-card class="recipe-card">
+        <div class="recipe-photo">
+            <img mat-card-image class="recipe-image" [src]="recipe.image">
+        </div>
+    <mat-card-header>
+        <mat-card-title class="mat-card-link">{{recipe.title}}</mat-card-title>
+        <mat-card-subtitle>Subtitle</mat-card-subtitle>
+    </mat-card-header>
+        <mat-card-content [routerLink]='["/recipes", recipe.id]'>
+            <p>
+                Description if we're going to have one.
+            </p>
+        </mat-card-content>
+  </mat-card>
+</div>

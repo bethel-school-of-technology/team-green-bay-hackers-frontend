@@ -19,6 +19,11 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { GroceryNewComponent } from './components/grocery-new/grocery-new.component';
 import { GroceryListComponent } from './components/grocery-list/grocery-list.component';
 import { SearchComponent } from './components/search/search.component';
+import { MatCardModule } from '@angular/material/card';
+import { RecipeDetailsComponent } from './components/recipe-details/recipe-details.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
+
 
 @NgModule({
   declarations: [
@@ -28,7 +33,9 @@ import { SearchComponent } from './components/search/search.component';
     HomeComponent, // Blake
     GroceryNewComponent, //Jaedyn
     GroceryListComponent, //Jaedyn
-    SearchComponent //Jaedyn
+    SearchComponent, //Jaedyn
+    RecipeDetailsComponent, 
+    GroceryListComponent //Jaedyn
   ],
   imports: [
     BrowserModule,
@@ -40,7 +47,9 @@ import { SearchComponent } from './components/search/search.component';
     MatIconModule,
     MatMenuModule,
     MatGridListModule,
-    MatListModule
+    MatListModule,
+    MatCardModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

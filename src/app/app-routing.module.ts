@@ -6,18 +6,20 @@ import { HomeComponent } from './components/home/home.component';
 import { GroceryNewComponent } from './components/grocery-new/grocery-new.component';
 import { GroceryListComponent } from './components/grocery-list/grocery-list.component';
 import { SearchComponent } from './components/search/search.component';
+import { RecipeDetailsComponent } from './components/recipe-details/recipe-details.component';
 
 const routes: Routes = [
 
   { 
-    path: "" , redirectTo: "home" , pathMatch: "full" //Blake
+    path: "" , redirectTo: "recipes" , pathMatch: "full" //Blake
   },
-  // { 
-  //   path: "home" , component: HomeComponent //Blake
-  // },
   {
-    path: "search",
+    path: "recipes",
     component: SearchComponent
+  },
+  {
+    path: "recipes/:id",
+    component: RecipeDetailsComponent
   },
   {
     path: "sign-up",
@@ -32,8 +34,14 @@ const routes: Routes = [
     component: GroceryListComponent //Jaedyn
   },
   {
-    path: "grocery-new",
-    component: GroceryNewComponent //Jaedyn
+    // path: "grocery-new",
+    // component: GroceryNewComponent //Jaedyn
+    path: "grocery-list/add",
+    component: GroceryNewComponent
+  },
+  {
+    path: "grocery-list",
+    component: GroceryListComponent
   }
 ];
 

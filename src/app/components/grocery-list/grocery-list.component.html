@@ -1,10 +1,8 @@
 <h1>Grocery List</h1>
-<a [routerLink]="['grocery-new']">Create New Grocery List Item</a>
-<div *ngIf="groceryList">
-    <div *ngFor="let Grocery of groceryList">
-        <h2>{{Grocery.listId}} {{Grocery.listItem}}</h2>
-        <p>{{Grocery.inCart}}</p>
-        
-        <hr>
-    </div>
+
+<button [routerLink]='["/grocery-list/add"]'>Add Item</button>
+<div *ngFor="let item of groceryList">
+    <p>{{item.listItem}}</p>
+    <button (click)="haveInCart(item)">Put Item in Cart</button>
+    <button (click)="delete(item.listId)">Delete Item</button>
 </div>
