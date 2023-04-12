@@ -20,6 +20,8 @@ import { GroceryNewComponent } from './components/grocery-new/grocery-new.compon
 import { SearchComponent } from './components/search/search.component';
 import { MatCardModule } from '@angular/material/card';
 import { RecipeDetailsComponent } from './components/recipe-details/recipe-details.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { GroceryListComponent } from './components/grocery-list/grocery-list.component';
 
 
 
@@ -29,7 +31,7 @@ import { RecipeDetailsComponent } from './components/recipe-details/recipe-detai
     SignUpComponent,//Jaedyn
     SignInComponent,//Jaedyn
     HomeComponent, // Blake
-    GroceryNewComponent, SearchComponent, RecipeDetailsComponent //Jaedyn
+    GroceryNewComponent, SearchComponent, RecipeDetailsComponent, GroceryListComponent //Jaedyn
   ],
   imports: [
     BrowserModule,
@@ -42,7 +44,8 @@ import { RecipeDetailsComponent } from './components/recipe-details/recipe-detai
     MatMenuModule,
     MatGridListModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

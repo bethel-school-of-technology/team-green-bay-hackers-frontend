@@ -6,6 +6,7 @@ import { HomeComponent } from './components/home/home.component';
 import { GroceryNewComponent } from './components/grocery-new/grocery-new.component';
 import { SearchComponent } from './components/search/search.component';
 import { RecipeDetailsComponent } from './components/recipe-details/recipe-details.component';
+import { GroceryListComponent } from './components/grocery-list/grocery-list.component';
 
 const routes: Routes = [
 
@@ -29,9 +30,13 @@ const routes: Routes = [
     component: SignInComponent //Jaedyn
   },
   {
-    path: "grocery-list",
+    path: "grocery-list/add",
     component: GroceryNewComponent
   },
+  {
+    path: "grocery-list",
+    component: GroceryListComponent
+  }
 ];
 
 @NgModule({
