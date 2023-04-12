@@ -18,6 +18,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 // import { ItemNewComponent } from './components/item-new/item-new.component';
 import { GroceryNewComponent } from './components/grocery-new/grocery-new.component';
 import { GroceryListComponent } from './components/grocery-list/grocery-list.component';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,9 @@ import { GroceryListComponent } from './components/grocery-list/grocery-list.com
     SignUpComponent,//Jaedyn
     SignInComponent,//Jaedyn
     HomeComponent, // Blake
-    GroceryNewComponent, GroceryListComponent //Jaedyn
+    GroceryNewComponent, //Jaedyn
+    GroceryListComponent, //Jaedyn
+    SearchComponent //Jaedyn
   ],
   imports: [
     BrowserModule,
