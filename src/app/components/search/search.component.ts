@@ -18,7 +18,6 @@ export class SearchComponent {
   constructor(public recipeService: RecipeService) { }
 
   searchRecipe(form: NgForm): void {
-
     this.recipeService.findRecipe(form.value.search).subscribe(response => {
       console.log(response);
       this.recipeList = response;

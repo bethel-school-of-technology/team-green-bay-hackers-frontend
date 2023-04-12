@@ -21,6 +21,7 @@ import { SearchComponent } from './components/search/search.component';
 import { MatCardModule } from '@angular/material/card';
 import { RecipeDetailsComponent } from './components/recipe-details/recipe-details.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { GroceryListComponent } from './components/grocery-list/grocery-list.component';
 
 
 
@@ -30,7 +31,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     SignUpComponent,//Jaedyn
     SignInComponent,//Jaedyn
     HomeComponent, // Blake
-    GroceryNewComponent, SearchComponent, RecipeDetailsComponent //Jaedyn
+    GroceryNewComponent, SearchComponent, RecipeDetailsComponent, GroceryListComponent //Jaedyn
   ],
   imports: [
     BrowserModule,
