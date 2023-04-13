@@ -15,6 +15,7 @@ export class GroceryListComponent {
 
   ngOnInit(): void {
     this.groceryService.getItems().subscribe(grocery => {
+      console.log(grocery);
       this.groceryList = grocery;
     })
   }
