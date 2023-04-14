@@ -23,7 +23,7 @@ export class UserService {
 
     return this.http.get(`${this.URL}/login`, { params: query, responseType: 'text'})
     .pipe(tap((response: any) => {
-      localStorage.setItem('tokenName', response);
+      localStorage.setItem('secret', response);
     }))
   }
 }

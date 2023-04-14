@@ -8,23 +8,23 @@ import { Router } from '@angular/router';
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.css']
 })
-export class SignUpComponent implements OnInit{
+export class SignUpComponent implements OnInit {
 
-  public newUser: User = new User();
+  newUser: User = new User();
 
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
-    
+
   }
 
-  signUp(){
+  signUp() {
     this.userService.signUp(this.newUser).subscribe(() => {
       window.alert("User Registered Successfully");
-      this.router.navigateByUrl('/signin');
+      this.router.navigateByUrl('/sign-in');
     }, error => {
-        window.alert("User Registration Error");
-        console.log('Error: ', error)
+      window.alert("User Registration Error");
+      console.log('Error: ', error)
     });
   }
 
