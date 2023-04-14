@@ -8,12 +8,12 @@ import { tap } from 'rxjs';
 })
 export class UserService {
 
-  URL: string = "localhost.example";
+  URL: string = "http://localhost:3000/api/users";
 
   constructor(private http: HttpClient) { }
 
   signUp(user: User) {
-    return this.http.post(`${this.URL}/register`, user);
+    return this.http.post(`${this.URL}`, user);
   }
 
   signIn(username: string, password: string) {
