@@ -21,7 +21,7 @@ export class UserService {
     query = query.append('username', username);
     query = query.append('password', password);
 
-    return this.http.get(`${this.URL}/login`, { params: query, responseType: 'text'})
+    return this.http.post(`${this.URL}/login`, { params: query, responseType: 'text'})
     .pipe(tap((response: any) => {
       localStorage.setItem('secret', response);
     }))
