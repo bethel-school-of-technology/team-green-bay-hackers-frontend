@@ -14,6 +14,8 @@ id: number = 0;
 
 currentRecipe: Recipe = new Recipe();
 
+similarRecipe: Recipe[] = [];
+
 constructor(private recipeService: RecipeService, private actRoute: ActivatedRoute) { }
 
 ngOnInit(): void {
@@ -22,6 +24,16 @@ ngOnInit(): void {
   this.recipeService.findRecipeById(this.id).subscribe(foundRecipe => {
     console.log(foundRecipe);
     this.currentRecipe = foundRecipe;
+this.findSimilarRecipe();
+  })
+}
+
+findSimilarRecipe() {
+  const routeId = this.actRoute.snapshot.paramMap.get("id") ?? "";
+  this.id = parseInt(routeId);
+  this.recipeService.findSimilarRecipe(this.id).subscribe(response => {
+    console.log(response);
+    this.similarRecipe = response
   })
 }
 
