@@ -18,13 +18,9 @@ export class UserService {
   }
 
   signIn(username: string, password: string) {
-    let query = new HttpParams();
-    query = query.append('username', username);
-    query = query.append('password', password);
-
-    return this.http.post(`${this.URL}/login`, { params: query, responseType: 'text'})
+    return this.http.post(`${this.URL}/login`, {username, password})
     .pipe(tap((response: any) => {
-      localStorage.setItem('tokenName', "{}");
+      localStorage.setItem('tokenName', response.token);
     }))
   }
 }

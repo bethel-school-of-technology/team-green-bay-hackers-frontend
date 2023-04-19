@@ -20,7 +20,7 @@ export class GroceryNewComponent {
   addGrocery() {
     this.groceryService.addItem(this.newGrocery).subscribe(() => {
       window.alert("Created Grocery Successfully");
-      this.router.navigate(['grocery']); //Where does this route to? // We honestly need this to stay on the same page, right? - Blake // and add the new grocery item beneath the form
+      this.router.navigate(['grocery-list']); //Where does this route to? // We honestly need this to stay on the same page, right? - Blake // and add the new grocery item beneath the form
     }, error => {
       console.log('Error: ', error)
       if (error.status === 401 || error.status === 403) {
