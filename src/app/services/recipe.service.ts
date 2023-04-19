@@ -10,6 +10,7 @@ export class RecipeService {
 
   searchSource: string = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=76f259eae67a4d039792ab892368b232"
   searchIdSource: string = "https://api.spoonacular.com/recipes/"
+  similarSource: string = "https://api.spoonacular.com/recipes/"
   searchInputParam: string = "&ingredients=";
 
   constructor(private http: HttpClient) { }
@@ -22,5 +23,8 @@ findRecipeById(id: number): Observable<Recipe> {
   return this.http.get<Recipe>(this.searchIdSource + id + "/information?apiKey=76f259eae67a4d039792ab892368b232")
 }
 
+findSimilarRecipe(id: number): Observable<Recipe[]> {
+  return this.http.get<Recipe[]>(this.similarSource + id + "/similar?apiKey=76f259eae67a4d039792ab892368b232&number=3")
+}
 
 }

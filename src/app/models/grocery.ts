@@ -1,11 +1,13 @@
 export class Grocery {
     listId?: string;
-    listItem?: string;
+    title?: string;
+    userId?: number;
     inCart?: boolean;
 
-    consctructor(id?: string, item?: string, inCart?: boolean) {
+    consctructor(id?: string, item?: string, userId?: number, inCart?: boolean) {
         this.listId = id;
-        this.listItem = item;
+        this.title = item;
+        this.userId = userId;
         this.inCart = inCart;
     }
 }

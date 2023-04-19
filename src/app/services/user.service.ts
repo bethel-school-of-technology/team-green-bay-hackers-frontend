@@ -9,12 +9,13 @@ import { tap } from 'rxjs';
 })
 export class UserService {
 
-  URL: string = "localhost.example";
+  URL: string = "http://localhost:3000/api/users";
 
   constructor(private http: HttpClient, private router: Router) {}
 
   signUp(user: User) {
     return this.http.post(`${this.URL}/register`, "{something: \"something\"}");
+
   }
 
   signIn(username: string, password: string) {
@@ -22,7 +23,7 @@ export class UserService {
     query = query.append('username', username);
     query = query.append('password', password);
 
-    return this.http.get(`${this.URL}/login`, { params: query, responseType: 'text'})
+    return this.http.post(`${this.URL}/login`, { params: query, responseType: 'text'})
     .pipe(tap((response: any) => {
       localStorage.setItem('tokenName', "{}");
     }))
