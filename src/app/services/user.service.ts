@@ -14,8 +14,7 @@ export class UserService {
   constructor(private http: HttpClient, private router: Router) {}
 
   signUp(user: User) {
-    return this.http.post(`${this.URL}/register`, "{something: \"something\"}");
-
+    return this.http.post(`${this.URL}`, user);
   }
 
   signIn(username: string, password: string) {

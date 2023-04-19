@@ -1,15 +1,18 @@
 <mat-toolbar class="toolbar">
-    <a href ="/recipes"><img src="https://www.guffincreative.com/wp-content/uploads/2023/04/good-eats-logo.svg" alt="Logo" class="logo"></a>
-  
-    <div class="spacer"></div>
-  
-    <button mat-button class="menu-button" [matMenuTriggerFor]="menu">
-        <mat-icon>menu</mat-icon>
-    </button>
-    
-      <mat-menu class="mat-menu" #menu="matMenu">
-        <a href="/recipes"><button mat-menu-item>Recipes</button></a>
-        <a href="/grocery-list"><button mat-menu-item>Grocery List</button></a>
-      </mat-menu>
-  </mat-toolbar>
-  <router-outlet></router-outlet>
+  <a href="/recipes"><img src="https://www.guffincreative.com/wp-content/uploads/2023/04/good-eats-logo.svg" alt="Logo"
+      class="logo"></a>
+
+  <div class="spacer"></div>
+
+  <button mat-button class="menu-button" [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <mat-menu class="mat-menu" #menu="matMenu">
+    <a href="/sign-up"><button mat-menu-item>Sign Up</button></a>
+    <a href="/sign-in"><button mat-menu-item>Sign In</button></a>
+    <a href="/recipes"><button mat-menu-item>Recipes</button></a>
+    <a href="/grocery-list"><button mat-menu-item>Grocery List</button></a>
+  </mat-menu>
+</mat-toolbar>
+<router-outlet></router-outlet>
