@@ -9,26 +9,7 @@
     </div>
 </section>
 
-<button (click)="randomRecipes()">See Random Recipes</button>
-<div class="recipe-area" *ngFor="let random of randomList">
-    <mat-card class="recipe-card">
-        <div class="recipe-photo">
-            <img mat-card-image class="recipe-image" [src]="random.image">
-        </div>
-        <mat-card-header>
-            <mat-card-title class="mat-card-link">{{random.title}}</mat-card-title>
-            <mat-card-subtitle>Subtitle</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content [routerLink]='["/recipes", random]'>
-            <p>
-                Description if we're going to have one.
-            </p>
-        </mat-card-content>
-    </mat-card>
-</div>
-
 <div *ngIf="recipeList">
-    <h2>Your Search Results: </h2>
     <div class="recipe-area" *ngFor="let recipe of recipeList">
         <mat-card class="recipe-card">
             <div class="recipe-photo">

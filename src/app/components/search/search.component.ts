@@ -12,7 +12,6 @@ import { NgForm } from '@angular/forms';
 export class SearchComponent {
 
   recipeList: Recipe[] = [];
-  randomList: Recipe[] = [];
 
   searchText: string = "";
 
@@ -29,13 +28,7 @@ export class SearchComponent {
     this.searchText = searchValue;
     console.log(this.searchText)
   }
-
-  randomRecipes(): void {
-    this.recipeService.findRandomRecipe().subscribe(response => {
-      console.log(response);
-      this.randomList = response;
-    })
+  
   }
 
-}
 

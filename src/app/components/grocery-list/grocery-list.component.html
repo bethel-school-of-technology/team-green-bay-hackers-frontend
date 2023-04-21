@@ -7,7 +7,7 @@
 </div>
 <p>Currently In Cart: </p>
 <div *ngFor="let item of haveInCart">
-    <p>{{item.title}}/p>
+    <p>{{item.title}}</p>
     <button (click)="changeInCart(item)">Put Item in Cart</button>
     <button (click)="delete(item.listId)">Delete Item</button>
 </div>
