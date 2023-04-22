@@ -1,7 +1,32 @@
+#content {
+    /* color: #edae49; */
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    /* background-color: #00798c; */
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    width: 375px;
+}
+
+
+form {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+
+label, form {
+    display: block;
+}
+
 
 /* Styling for default view of inCart button on list page*/
-.add-btn {
-    padding: 0 6px 0 6px;
+#add-btn {
+    padding: 6px 6px;
     margin: 6px 8px 6px 8px;
     min-width: 88px;
     border-radius: 3px;
@@ -10,18 +35,19 @@
     text-transform: uppercase;
     text-decoration:none;
     border: 1 px solid gray;
+    color: white;
     background-color: forestgreen;
 }
 
 /* Styling for inCart button when mouse is hovered over button*/
 
-.add-btn:hover {
+#add-btn:hover {
     background-color: rgb(172, 170, 170);
 }
 
 /* Styling for default view of delete button on list page*/
-.delete-btn {
-    padding: 0 6px 0 6px;
+#delete-btn {
+    padding: 6px 6px;
     margin: 6px 8px 6px 8px;
     min-width: 88px;
     border-radius: 3px;
@@ -30,11 +56,14 @@
     text-transform: uppercase;
     text-decoration:none;
     border: 1 px solid gray;
+    /* text color */
+    color: white;
+    /* background color of button */
     background-color: rgb(94, 99, 94);
 }
 
 /* Styling for list delete button when mouse is hovered over button*/
 
-.add-btn:hover {
+#delete-btn:hover {
     background-color: rgb(215, 14, 14);
 }
