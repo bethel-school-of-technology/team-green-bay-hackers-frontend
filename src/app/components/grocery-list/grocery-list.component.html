@@ -1,6 +1,13 @@
 <button [routerLink]='["/grocery-list/add"]'>Add Item</button>
+<p>Currently Not In Cart: </p>
 <div *ngFor="let item of groceryList">
-    <p>{{item.title}} || {{item.inCart}}</p>
-    <button (click)="haveInCart(item)">Put Item in Cart</button>
+    <p>{{item.title}}</p>
+    <button (click)="changeInCart(item)">Put Item in Cart</button>
+    <button (click)="delete(item.listId)">Delete Item</button>
+</div>
+<p>Currently In Cart: </p>
+<div *ngFor="let item of haveInCart">
+    <p>{{item.title}}</p>
+    <button (click)="changeInCart(item)">Put Item in Cart</button>
     <button (click)="delete(item.listId)">Delete Item</button>
 </div>
