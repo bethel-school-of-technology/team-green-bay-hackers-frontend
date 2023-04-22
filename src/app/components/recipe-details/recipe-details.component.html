@@ -11,7 +11,9 @@
             <a>
                 {{currentRecipe.sourceUrl}}
             </a>
-            <p *ngFor="let ing of ingredientList">{{ing.name}}</p>
+            <p *ngFor="let ing of ingredientList">{{ing.name}}
+                <button (click)="addToList(ing.name)">Add to Shopping List</button>
+            </p>
         </mat-card-content>
   </mat-card>
 </div>
