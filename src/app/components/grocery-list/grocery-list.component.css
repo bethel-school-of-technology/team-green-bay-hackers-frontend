@@ -1,5 +1,6 @@
+
+/* Styling for item input form.  Need to add "content" id to this div object */
 #content {
-    /* color: #edae49; */
     text-align: center;
     border: 2px solid black;
     border-radius: 10px;
@@ -7,20 +8,8 @@
     margin-bottom: 10%;
     margin-left: auto;
     margin-right: auto;
-    /* background-color: #00798c; */
     font-family: 'Kdam Thmor Pro', sans-serif;
     width: 375px;
-}
-
-
-form {
-    margin-bottom: 20px;
-    font-size: 20px;
-}
-
-
-label, form {
-    display: block;
 }
 
 
