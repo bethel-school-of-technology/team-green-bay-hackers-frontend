@@ -11,6 +11,7 @@
             <a>
                 {{currentRecipe.sourceUrl}}
             </a>
+            <p *ngFor="let ing of ingredientList">{{ing.name}}</p>
         </mat-card-content>
   </mat-card>
 </div>

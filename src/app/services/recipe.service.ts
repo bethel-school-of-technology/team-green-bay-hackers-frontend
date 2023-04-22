@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Recipe } from '../models/recipe';
+import { Recipe, Random } from '../models/recipe';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -26,6 +26,10 @@ findRecipeById(id: number): Observable<Recipe> {
 
 findSimilarRecipe(id: number): Observable<Recipe[]> {
   return this.http.get<Recipe[]>(this.similarSource + id + "/similar?apiKey=76f259eae67a4d039792ab892368b232&number=3")
+}
+
+findRandomRecipe(): Observable<Random> {
+  return this.http.get<Random>(this.randomSource);
 }
 
 }

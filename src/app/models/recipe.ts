@@ -16,3 +16,7 @@ export class Ingredients {
     name: string = "";
     id: number = 0;
 }
+
+export class Random {
+    recipes: Recipe[] = [];
+}

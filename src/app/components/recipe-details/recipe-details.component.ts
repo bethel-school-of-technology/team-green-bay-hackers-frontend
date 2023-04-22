@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { ActivatedRoute } from '@angular/router';
-import { Recipe } from 'src/app/models/recipe';
+import { Ingredients, Recipe } from 'src/app/models/recipe';
 
 @Component({
   selector: 'app-recipe-details',
@@ -10,31 +10,33 @@ import { Recipe } from 'src/app/models/recipe';
 })
 export class RecipeDetailsComponent {
 
-id: number = 0;
+  id: number = 0;
 
-currentRecipe: Recipe = new Recipe();
+  currentRecipe: Recipe = new Recipe();
 
-similarRecipe: Recipe[] = [];
+  similarRecipe: Recipe[] = [];
+  ingredientList: Ingredients[] = [];
 
-constructor(private recipeService: RecipeService, private actRoute: ActivatedRoute) { }
+  constructor(private recipeService: RecipeService, private actRoute: ActivatedRoute) { }
 
-ngOnInit(): void {
-  const routeId = this.actRoute.snapshot.paramMap.get("id") ?? "";
-  this.id = parseInt(routeId);
-  this.recipeService.findRecipeById(this.id).subscribe(foundRecipe => {
-    console.log(foundRecipe);
-    this.currentRecipe = foundRecipe;
-this.findSimilarRecipe();
-  })
-}
+  ngOnInit(): void {
+    const routeId = this.actRoute.snapshot.paramMap.get("id") ?? "";
+    this.id = parseInt(routeId);
+    this.recipeService.findRecipeById(this.id).subscribe(foundRecipe => {
+      console.log(foundRecipe);
+      this.currentRecipe = foundRecipe;
+      this.ingredientList = this.currentRecipe.extendedIngredients;
+      this.findSimilarRecipe();
+    })
+  }
 
-findSimilarRecipe() {
-  const routeId = this.actRoute.snapshot.paramMap.get("id") ?? "";
-  this.id = parseInt(routeId);
-  this.recipeService.findSimilarRecipe(this.id).subscribe(response => {
-    console.log(response);
-    this.similarRecipe = response
-  })
-}
+  findSimilarRecipe() {
+    const routeId = this.actRoute.snapshot.paramMap.get("id") ?? "";
+    this.id = parseInt(routeId);
+    this.recipeService.findSimilarRecipe(this.id).subscribe(response => {
+      console.log(response);
+      this.similarRecipe = response
+    })
+  }
 
 }
