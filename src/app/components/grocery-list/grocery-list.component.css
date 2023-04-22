@@ -40,19 +40,22 @@
 
 /* Styling for default view of delete button on list page*/
 #delete-btn {
-    padding: 6px 6px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    border-color: gray;
+    /* background color of button */
+    background-color: gray;
+    color: white;
     margin: 6px 8px 6px 8px;
     min-width: 88px;
-    border-radius: 3px;
     font-size: 14px;
     text-align: center;
     text-transform: uppercase;
     text-decoration:none;
-    border: 1 px solid gray;
     /* text color */
-    color: white;
-    /* background color of button */
-    background-color: rgb(94, 99, 94);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 /* Styling for list delete button when mouse is hovered over button*/
