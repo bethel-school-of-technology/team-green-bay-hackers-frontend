@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { RecipeService } from 'src/app/services/recipe.service';
+import { GroceryService } from 'src/app/services/grocery.service';
 import { ActivatedRoute } from '@angular/router';
-import { Recipe } from 'src/app/models/recipe';
+import { Ingredients, Recipe } from 'src/app/models/recipe';
+import { Grocery } from 'src/app/models/grocery';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-recipe-details',
@@ -10,19 +13,46 @@ import { Recipe } from 'src/app/models/recipe';
 })
 export class RecipeDetailsComponent {
 
-id: number = 0;
+  id: number = 0;
 
-currentRecipe: Recipe = new Recipe();
+  currentRecipe: Recipe = new Recipe();
 
-constructor(private recipeService: RecipeService, private actRoute: ActivatedRoute) { }
+  similarRecipe: Recipe[] = [];
+  ingredientList: Ingredients[] = [];
 
-ngOnInit(): void {
-  const routeId = this.actRoute.snapshot.paramMap.get("id") ?? "";
-  this.id = parseInt(routeId);
-  this.recipeService.findRecipeById(this.id).subscribe(foundRecipe => {
-    console.log(foundRecipe);
-    this.currentRecipe = foundRecipe;
-  })
-}
+  newItem: Grocery = new Grocery();
 
+  constructor(private recipeService: RecipeService, private actRoute: ActivatedRoute, private groceryService: GroceryService, private router: Router) { }
+
+  ngOnInit(): void {
+    const routeId = this.actRoute.snapshot.paramMap.get("id") ?? "";
+    this.id = parseInt(routeId);
+    this.recipeService.findRecipeById(this.id).subscribe(foundRecipe => {
+      console.log(foundRecipe);
+      this.currentRecipe = foundRecipe;
+      this.ingredientList = this.currentRecipe.extendedIngredients;
+      this.findSimilarRecipe();
+    })
+  }
+
+  findSimilarRecipe() {
+    const routeId = this.actRoute.snapshot.paramMap.get("id") ?? "";
+    this.id = parseInt(routeId);
+    this.recipeService.findSimilarRecipe(this.id).subscribe(response => {
+      console.log(response);
+      this.similarRecipe = response
+    })
+  }
+
+  addToList(name: string) {
+    this.newItem.title = name;
+    this.groceryService.addItem(this.newItem).subscribe(() => {
+      window.alert("Successfully Added to Shopping List")
+    }, error => {
+      console.log("Error: ", error);
+      if (error.status == 401 || error.status == 403) {
+        this.router.navigate(['sign-in']);
+      }
+    });
+  }
 }

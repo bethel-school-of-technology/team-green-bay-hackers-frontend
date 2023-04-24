@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Grocery } from "../models/grocery";
 import { Observable } from 'rxjs';
 
@@ -13,19 +13,27 @@ export class GroceryService {
 
   constructor(private http: HttpClient) { }
 
+
+  
   getItems(): Observable<Grocery[]> {
     return this.http.get<Grocery[]>(this.URL);
   }
 
   addItem(newItem: Grocery) {
-    return this.http.post(this.URL, newItem);
+    const token = localStorage.getItem('tokenName');
+    let headers = new HttpHeaders().set("Authorization", 'Bearer ' + token);
+    return this.http.post(this.URL, newItem, {headers});
   }
 
   updateItem(newItem: Grocery) {
-    return this.http.put<Grocery[]>(`${this.URL}/${newItem.listId}`, newItem)
+    const token = localStorage.getItem('tokenName');
+    let headers = new HttpHeaders().set("Authorization", 'Bearer ' + token);
+    return this.http.put<Grocery[]>(`${this.URL}/${newItem.listId}`, newItem, {headers})
   }
 
   deleteItem(itemId: string) {
-    return this.http.delete<any>(`${this.URL}/${itemId}`)
+    const token = localStorage.getItem('tokenName');
+    let headers = new HttpHeaders().set("Authorization", 'Bearer ' + token);
+    return this.http.delete<any>(`${this.URL}/${itemId}`, {headers})
   }
 }

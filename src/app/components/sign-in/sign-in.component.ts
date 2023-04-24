@@ -21,6 +21,7 @@ export class SignInComponent {
   signin(){
     this.userService.signIn(this.username, this.password).subscribe((response:any) => {
       this.router.navigateByUrl('/grocery-list');
+      console.log(response);
     }, error => {
       console.log('Error: ', error);
       window.alert('Unsuccessful Login');
