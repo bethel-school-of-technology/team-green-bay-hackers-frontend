@@ -1,0 +1,77 @@
+body {
+    background: radial-gradient(76.31% 268.58% at 50% 50%, #9FD650 0%, #91CA2C 61.05%, #72A60C 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    mix-blend-mode: normal;
+}
+
+.hero {
+    color: white;
+    padding: 100px 0;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .hero-content {
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .hero-title {
+    color: white;
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .hero-subtitle {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: white;
+  }
+  
+  .hero-search {
+    display: block;
+    justify-content: center;
+  }
+  
+  .hero-search input[type="text"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    width: 20%;
+    margin-right: 10px;
+  }
+  
+  .hero-search button[type="submit"] {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    border-color: white;
+    background-color: white;
+    color: #9FD650;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .hero-search button:hover {
+    background-color: #9FD650;;
+    color: white;
+  }
+  
+  .hero-search button[type="submit"]:hover {
+    background-color: #9FD650;
+    box-shadow: 1px 1px 5px 1px #628c27;
+    cursor: pointer;
+  }
+
+
+.example-card:hover {
+    box-shadow: 1px 1px 5px 1px rgb(136, 136, 136);
+    cursor: pointer;
+}
+
+.hero-search input[type="password"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  width: 20%;
+  margin-right: 10px;
+}
