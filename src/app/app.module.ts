@@ -22,6 +22,7 @@ import { MatCardModule } from '@angular/material/card';
 import { RecipeDetailsComponent } from './components/recipe-details/recipe-details.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { GroceryListComponent } from './components/grocery-list/grocery-list.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
 
@@ -45,7 +46,8 @@ import { GroceryListComponent } from './components/grocery-list/grocery-list.com
     MatGridListModule,
     MatListModule,
     MatCardModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
