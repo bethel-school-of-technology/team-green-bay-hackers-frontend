@@ -7,6 +7,10 @@
         <mat-icon>menu</mat-icon>
     </button>
     
+    <!-- <div>Welcome</div> -->
+    <div *ngIf="displayMessage"> Welcome, {{user.username}}</div>
+
+
       <mat-menu class="mat-menu" #menu="matMenu">
         <a href="/sign-up"><button mat-menu-item>Sign Up</button></a>
         <a href="/sign-in"><button mat-menu-item>Sign In</button></a>

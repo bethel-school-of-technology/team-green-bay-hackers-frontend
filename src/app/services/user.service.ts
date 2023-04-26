@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { User } from '../models/user';
 import { Router } from '@angular/router';
 import { tap } from 'rxjs';
@@ -22,5 +22,11 @@ export class UserService {
     .pipe(tap((response: any) => {
       localStorage.setItem('tokenName', response.token);
     }))
+  }
+
+  getUserInfo(id: number){
+    const token = localStorage.getItem('tokenName');
+    let headers = new HttpHeaders().set("Authorization", 'Bearer ' + token);
+    return this.http.get(`${this.URL}/${id}`, {headers})
   }
 }
