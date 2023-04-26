@@ -11,20 +11,23 @@
       Sign Up
     </button>
 </form> -->
-<body><section class="hero">
-  <div class="hero-content">
-    <h1 class="hero-title">Register</h1>
-    <form #myForm="ngForm" class="hero-search" (ngSubmit)="signUp()">
-      <span>User Name  </span>
-      <input placeholder="User Name" type="text" name="username" [(ngModel)]="newUser.username"><br><br>
+<body>
+  <section class="hero">
+    <div class="hero-content">
+      <mat-card class="first-card">
+        <mat-card-content>
+          <h1 class="hero-title">Register</h1>
+            <form #myForm="ngForm" class="hero-search" (ngSubmit)="signUp()">
+              <input placeholder="User Name" type="text" name="username" [(ngModel)]="newUser.username"><br><br>
 
-      <span>Email  </span>
-      <input placeholder="Email" type="text" name="email" [(ngModel)]="newUser.email"><br><br>
+              <input placeholder="Email" type="text" name="email" [(ngModel)]="newUser.email"><br><br>
 
-      <span>Password  </span>
-      <input placeholder="Enter Password" type="password" name="password" [(ngModel)]="newUser.password"><br><br>
+              <input placeholder="Create Password" type="password" name="password" [(ngModel)]="newUser.password"><br><br>
 
-      <button type="submit">Sign Up</button>
-      </form>
-  </div>
-</section></body>
+            <button type="submit">Sign Up</button>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </section>
+</body>
