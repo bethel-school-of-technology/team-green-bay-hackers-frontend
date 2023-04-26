@@ -17,11 +17,13 @@ import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 // import { ItemNewComponent } from './components/item-new/item-new.component';
 import { GroceryNewComponent } from './components/grocery-new/grocery-new.component';
+import { GroceryListComponent } from './components/grocery-list/grocery-list.component';
 import { SearchComponent } from './components/search/search.component';
 import { MatCardModule } from '@angular/material/card';
 import { RecipeDetailsComponent } from './components/recipe-details/recipe-details.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { GroceryListComponent } from './components/grocery-list/grocery-list.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
 
@@ -31,7 +33,11 @@ import { GroceryListComponent } from './components/grocery-list/grocery-list.com
     SignUpComponent,//Jaedyn
     SignInComponent,//Jaedyn
     HomeComponent, // Blake
-    GroceryNewComponent, SearchComponent, RecipeDetailsComponent, GroceryListComponent //Jaedyn
+    GroceryNewComponent, //Jaedyn
+    GroceryListComponent, //Jaedyn
+    SearchComponent, //Jaedyn
+    RecipeDetailsComponent, 
+    GroceryListComponent //Jaedyn
   ],
   imports: [
     BrowserModule,
@@ -45,7 +51,8 @@ import { GroceryListComponent } from './components/grocery-list/grocery-list.com
     MatGridListModule,
     MatListModule,
     MatCardModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
