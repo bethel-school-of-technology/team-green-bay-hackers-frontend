@@ -4,7 +4,7 @@
 
 <h2> Items in your List: </h2>
 
-<div *ngFor="let item of groceryList">
+<div *ngFor="let item of showGroceryList">
     <div *ngIf="item.inCart; then inCartTrue else inCartFalse"></div>
 
     <ng-template #inCartTrue>

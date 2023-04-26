@@ -9,24 +9,32 @@ import { GroceryService } from 'src/app/services/grocery.service';
 })
 export class GroceryListComponent {
 
-  groceryList: Grocery[] = [];
+  getGroceryList: Grocery[] = [];
+  showGroceryList: Grocery[] = [];
+
+
 
   constructor(private groceryService: GroceryService) { }
 
   ngOnInit(): void {
- 
+    const user = parseInt(localStorage.getItem('userId')!);
     this.groceryService.getItems().subscribe(grocery => {
-      console.log(grocery);
-      this.groceryList = grocery;
+      console.log("UserId: " + user);
+      this.getGroceryList = grocery;
+      for (let item of this.getGroceryList) {
+        if (item.userId == user) {
+          this.showGroceryList.push(item);
+        }
+      }
     });
   }
 
   delete(listId: any): void {
     this.groceryService.deleteItem(listId).subscribe();
-    for (let recipe of this.groceryList) {
-      var index = this.groceryList.indexOf(recipe);
+    for (let recipe of this.getGroceryList) {
+      var index = this.getGroceryList.indexOf(recipe);
       if (recipe.listId == listId) {
-        this.groceryList.splice(index, 1);
+        this.getGroceryList.splice(index, 1);
       }
     }
   }

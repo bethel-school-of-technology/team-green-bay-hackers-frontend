@@ -13,7 +13,9 @@ export class SearchComponent {
 
   recipeList: Recipe[] = [];
   randomList: Random = new Random();
-  randomRecipes: Recipe[] = [];
+  randomRecipesList: Recipe[] = [];
+
+  displaySearch: boolean = false;
 
   searchText: string = "";
 
@@ -23,7 +25,7 @@ export class SearchComponent {
     this.recipeService.findRandomRecipe().subscribe(response => {
       console.log(response);
       this.randomList = response;
-      this.randomRecipes = this.randomList.recipes;
+      this.randomRecipesList = this.randomList.recipes;
     })
   }
 
@@ -31,6 +33,7 @@ export class SearchComponent {
     this.recipeService.findRecipe(form.value.search).subscribe(response => {
       console.log(response);
       this.recipeList = response;
+      this.displaySearch = true;
     })
   }
 
