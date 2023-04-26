@@ -1,27 +1,18 @@
-<!-- <form (ngSubmit)="signin()">
-    <h1>LOGIN</h1>
-    <span>Username  </span>
-    <input placeholder="Enter username" type="text" name="username" [(ngModel)]="username">
-    <br><br>
-    <span>Password  </span>
-    <input placeholder="Enter password" type="password" name="password" [(ngModel)]="password">
-    <br><br>
-    
-    <button>
-      Sign In
-    </button>
-</form> -->
-<body><section class="hero">
-  <div class="hero-content">
-    <h1 class="hero-title">LOGIN</h1>
-    <form #myForm="ngForm" class="hero-search" (ngSubmit)="signin()">
-      <span>Username  </span>
-      <input placeholder="Username" type="text" name="username" [(ngModel)]="username"><br><br>
-
-      <span>Password  </span>
-      <input placeholder="password" type="password" name="password" [(ngModel)]="password"><br><br>
-
-      <button type="submit">Sign Up</button>
-      </form>
-  </div>
-</section></body>
+<body>
+    <section class="hero">
+    <div class="hero-content">
+      <mat-card class="first-card">
+        <mat-card-content>
+        <h1 class="hero-title">Login</h1>
+        <form #myForm="ngForm" class="hero-search" (ngSubmit)="signin()">
+          <input placeholder="Username" type="text" name="username" [(ngModel)]="username"><br><br>
+      
+          <input placeholder="Password" type="password" name="password" [(ngModel)]="password"><br><br>
+      
+          <button type="submit">Sign In</button>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </section>
+</body>
