@@ -11,7 +11,7 @@
 
 <h1>Random Recipes: </h1>
 <div class="recipe-area" *ngFor="let recipe of randomRecipes">
-    <mat-card class="recipe-card">
+    <mat-card class="recipe-card" [routerLink]='["/recipes", recipe.id]'>
         <div class="recipe-photo">
             <img mat-card-image class="recipe-image" [src]="recipe.image">
         </div>
@@ -31,7 +31,7 @@
 <div *ngIf="recipeList">
     <h1>Your Search Results: </h1>
     <div class="recipe-area" *ngFor="let recipe of recipeList">
-        <mat-card class="recipe-card">
+        <mat-card class="recipe-card" [routerLink]='["/recipes", recipe.id]'>
             <div class="recipe-photo">
                 <img mat-card-image class="recipe-image" [src]="recipe.image">
             </div>
@@ -39,7 +39,7 @@
                 <mat-card-title class="mat-card-link">{{recipe.title}}</mat-card-title>
                 <mat-card-subtitle>Subtitle</mat-card-subtitle>
             </mat-card-header>
-            <mat-card-content [routerLink]='["/recipes", recipe.id]'>
+            <mat-card-content>
                 <p>
                     Description if we're going to have one.
                 </p>

@@ -1,15 +1,24 @@
 <h1>Grocery List</h1>
 
 <button [routerLink]='["/grocery-list/add"]'>Add Item</button>
-<p>Currently Not In Cart: </p>
+
+<h2> Items in your List: </h2>
+
 <div *ngFor="let item of groceryList">
-    <p>{{item.title}}</p>
-    <button (click)="changeInCart(item)">Put Item in Cart</button>
-    <button (click)="delete(item.listId)">Delete Item</button>
-</div>
-<p>Currently In Cart: </p>
-<div *ngFor="let item of haveInCart">
-    <p>{{item.title}}</p>
-    <button (click)="changeInCart(item)">Put Item in Cart</button>
-    <button (click)="delete(item.listId)">Delete Item</button>
+    <div *ngIf="item.inCart; then inCartTrue else inCartFalse"></div>
+
+    <ng-template #inCartTrue>
+        <mat-checkbox [checked]="true" (click)="changeInCart(item)">
+            In Cart: {{item.title}}
+            <button (click)="delete(item.listId)">Delete Item</button>
+        </mat-checkbox>
+
+    </ng-template>
+    <ng-template #inCartFalse>
+        <mat-checkbox [checked]="false" (click)="changeInCart(item)">
+            Not In Cart: {{item.title}}
+            <button (click)="delete(item.listId)">Delete Item</button>
+        </mat-checkbox>
+
+    </ng-template>
 </div>
