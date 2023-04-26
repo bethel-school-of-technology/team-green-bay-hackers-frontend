@@ -9,7 +9,6 @@ import { Observable } from 'rxjs';
 export class GroceryService {
 
   URL: string = "http://localhost:3000/api/list"
-  //tokenKey: string = "myGroceryToken";
 
   constructor(private http: HttpClient) { }
 
@@ -20,8 +19,8 @@ export class GroceryService {
   }
 
   addItem(newItem: Grocery) {
-    const token = localStorage.getItem('tokenName');
-    let headers = new HttpHeaders().set("Authorization", 'Bearer ' + token);
+    const token = localStorage.getItem('tokenName'); // Token
+    let headers = new HttpHeaders().set("Authorization", 'Bearer '  + token);
     return this.http.post(this.URL, newItem, {headers});
   }
 

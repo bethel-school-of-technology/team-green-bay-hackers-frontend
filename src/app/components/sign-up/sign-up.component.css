@@ -3,6 +3,13 @@ body {
     mix-blend-mode: normal;
 }
 
+.hero-title {
+  color: #333333;
+  margin-bottom: 20px;
+  font-size: xx-large;
+  font-weight: 400;
+}
+
 .hero {
     color: white;
     padding: 100px 0;
@@ -13,12 +20,6 @@ body {
   .hero-content {
     margin: 0 auto;
     text-align: center;
-  }
-  
-  .hero-title {
-    color: white;
-    font-size: 36px;
-    margin-bottom: 20px;
   }
   
   .hero-subtitle {
@@ -32,34 +33,34 @@ body {
     justify-content: center;
   }
   
-  .hero-search input[type="text"] {
+  .hero-search input {
     padding: 10px;
     border-radius: 5px;
-    border: none;
-    width: 20%;
+    border: solid;
+    border-width: 2px;
+    border-color: #9FD650;
+    width: 50%;
     margin-right: 10px;
   }
   
   .hero-search button[type="submit"] {
     padding: 10px 20px;
     border-radius: 5px;
-    border: none;
-    border-color: white;
-    background-color: white;
-    color: #9FD650;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-
-  .hero-search button:hover {
-    background-color: #9FD650;;
+    border: solid;
+    border-color: #9FD650;
+    background-color: #9FD650;
     color: white;
+    cursor: pointer;
+    box-shadow: none;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+    transition: box-shadow 0.3s ease;
   }
   
   .hero-search button[type="submit"]:hover {
     background-color: #9FD650;
-    box-shadow: 1px 1px 5px 1px #628c27;
     cursor: pointer;
+    box-shadow: 1px 1px 5px 1px rgb(136, 136, 136);
+    transition: box-shadow 0.3s ease;
   }
 
 
@@ -68,10 +69,12 @@ body {
     cursor: pointer;
 }
 
-.hero-search input[type="password"] {
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  width: 20%;
-  margin-right: 10px;
+.first-card {
+  width: 50%;
+  max-width: 600px;
+  max-height: 400px;
+  min-width: 350px;
+  padding-bottom: 5%;
+  margin: auto;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
 }

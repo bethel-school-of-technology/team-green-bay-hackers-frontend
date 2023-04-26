@@ -14,6 +14,7 @@ export class GroceryListComponent {
   constructor(private groceryService: GroceryService) { }
 
   ngOnInit(): void {
+ 
     this.groceryService.getItems().subscribe(grocery => {
       console.log(grocery);
       this.groceryList = grocery;
