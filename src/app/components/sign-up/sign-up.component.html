@@ -1,4 +1,4 @@
-<form (ngSubmit)="signUp()">
+<!-- <form (ngSubmit)="signUp()">
     <h1>REGISTER</h1>
     <span>User Name  </span>
     <input placeholder="Enter User Name" type="text" name="username" [(ngModel)]="newUser.username"><br><br>
@@ -10,4 +10,21 @@
     <button>
       Sign Up
     </button>
-</form>
+</form> -->
+<body><section class="hero">
+  <div class="hero-content">
+    <h1 class="hero-title">Register</h1>
+    <form #myForm="ngForm" class="hero-search" (ngSubmit)="signUp()">
+      <span>User Name  </span>
+      <input placeholder="User Name" type="text" name="username" [(ngModel)]="newUser.username"><br><br>
+
+      <span>Email  </span>
+      <input placeholder="Email" type="text" name="email" [(ngModel)]="newUser.email"><br><br>
+
+      <span>Password  </span>
+      <input placeholder="Enter Password" type="password" name="password" [(ngModel)]="newUser.password"><br><br>
+
+      <button type="submit">Sign Up</button>
+      </form>
+  </div>
+</section></body>
