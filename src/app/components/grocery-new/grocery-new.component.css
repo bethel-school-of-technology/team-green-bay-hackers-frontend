@@ -1,0 +1,38 @@
+/* Styling for item input form.  Need to add "content" id to this div object */
+#content {
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    width: 375px;
+}
+
+
+/* Styling for default view of inCart button on list page*/
+#add-btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    border-color: #9FD650;
+    background-color: #9FD650;
+    color: white;
+    margin: 6px 8px 6px 8px;
+    min-width: 88px;
+    border-radius: 3px;
+    font-size: 14px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration:none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Styling for inCart button when mouse is hovered over button*/
+
+#add-btn:hover {
+    background-color: rgb(172, 170, 170);
+}
