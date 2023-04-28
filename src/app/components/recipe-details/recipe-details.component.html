@@ -17,7 +17,7 @@
         </mat-card-content>
     </mat-card>
 </div>
-<div class="recipe-area" *ngFor="let recipe of similarRecipe">
+<div class="recipe-area" *ngFor="let recipe of showSimilarRecipe">
     <mat-card class="recipe-card" [routerLink]='["/recipes", recipe.id]'>
         <div class="recipe-photo">
             <img mat-card-image class="recipe-image" [src]="recipe.image">
