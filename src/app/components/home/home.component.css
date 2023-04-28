@@ -22,3 +22,13 @@
   a {
     text-decoration: none;
   }
+
+  .welcome {
+    padding-right: 25px;
+  }
+
+  .userstyle {
+    font-weight: 800;
+    color: #9FD650;
+    margin: 0 15px 0 0;
+  }

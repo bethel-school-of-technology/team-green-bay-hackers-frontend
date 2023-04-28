@@ -1,24 +1,39 @@
-<h1>Grocery List</h1>
 
-<button [routerLink]='["/grocery-list/add"]'>Add Item</button>
 
-<h2> Items in your List: </h2>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <mat-card class="first-card">
+                <mat-card-content class="hero-search">
+                    <h1 class="hero-title">Grocery List</h1>
 
-<div *ngFor="let item of showGroceryList">
-    <div *ngIf="item.inCart; then inCartTrue else inCartFalse"></div>
+                        <button class="add-btn" [routerLink]='["/grocery-list/add"]'>Add Item</button>
 
-    <ng-template #inCartTrue>
-        <mat-checkbox [checked]="true" (click)="changeInCart(item)">
-            In Cart: {{item.title}}
-            <button (click)="delete(item.listId)">Delete Item</button>
-        </mat-checkbox>
+                        <hr>
 
-    </ng-template>
-    <ng-template #inCartFalse>
-        <mat-checkbox [checked]="false" (click)="changeInCart(item)">
-            Not In Cart: {{item.title}}
-            <button (click)="delete(item.listId)">Delete Item</button>
-        </mat-checkbox>
+                        <h2> Items in your List: </h2>
 
-    </ng-template>
-</div>
+                        <div *ngFor="let item of showGroceryList">
+                            <div *ngIf="item.inCart; then inCartTrue else inCartFalse"></div>
+
+                            <ng-template #inCartTrue>
+                                <mat-checkbox [checked]="true" (click)="changeInCart(item)">
+                                    In Cart: {{item.title}}
+                                    <button class="delete-btn" (click)="delete(item.listId)">Delete Item</button>
+                                </mat-checkbox>
+
+                            </ng-template>
+                            <ng-template #inCartFalse>
+                                <mat-checkbox [checked]="false" (click)="changeInCart(item)">
+                                    Not In Cart: {{item.title}}
+                                    <button class="delete-btn" (click)="delete(item.listId)">Delete Item</button>
+                                </mat-checkbox>
+
+                            </ng-template>
+                        </div>
+
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </section>
+</body>
