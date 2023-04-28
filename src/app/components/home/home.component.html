@@ -5,26 +5,13 @@
   <div class="spacer"></div>
 
   <div *ngIf="displayMessage; then signedIn else notSignedIn"></div>
-  <div>
-    <ng-template #signedIn>
-      <p>Welcome, <span class="userstyle">{{user.username}}</span>
-      </p>
-    </ng-template>
-    <ng-template #notSignedIn>
-      <a href="/sign-in" class="userstyle">Sign In</a>
-    </ng-template>
-
-  </div>
 
   <button mat-button class="menu-button" [matMenuTriggerFor]="menu">
     <mat-icon>menu</mat-icon>
   </button>
 
-
-
-
   <mat-menu class="mat-menu" #menu="matMenu">
-    <ng-template #signedIn>
+    <ng-template #notSignedIn>
       <a href="/sign-up"><button mat-menu-item>Sign Up</button></a>
       <a href="/sign-in"><button mat-menu-item>Sign In</button></a>
     </ng-template>
@@ -32,6 +19,12 @@
     <a href="/grocery-list"><button mat-menu-item>Grocery List</button></a>
     <ng-template #signedIn>
       <a href="" (click)="signOut()"><button mat-menu-item>Sign Out</button></a>
+
+      <div>
+        <p>Welcome, <span class="userstyle">{{user.username}}</span>
+        </p>
+      </div>
+
     </ng-template>
   </mat-menu>
 </mat-toolbar>
