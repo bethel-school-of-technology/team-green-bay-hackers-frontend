@@ -4,15 +4,22 @@
 
   <div class="spacer"></div>
 
+  <div *ngIf="displayMessage; then signedIn else notSignedIn"></div>
+  <div>
+    <ng-template #signedIn>
+      <p>Welcome, {{user.username}} ||
+        <a href="" (click)="signOut()">Sign Out</a>
+      </p>
+    </ng-template>
+    <ng-template #notSignedIn>
+      <a href="/sign-in">Sign In</a>
+    </ng-template>
+
+  </div>
+
   <button mat-button class="menu-button" [matMenuTriggerFor]="menu">
     <mat-icon>menu</mat-icon>
   </button>
-
-  <!-- <div>Welcome</div> -->
-  <div *ngIf="displayMessage">
-    <p>Welcome, {{user.username}}</p>
-  </div>
-
 
   <mat-menu class="mat-menu" #menu="matMenu">
     <a href="/sign-up"><button mat-menu-item>Sign Up</button></a>

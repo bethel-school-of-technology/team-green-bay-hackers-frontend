@@ -17,7 +17,8 @@ export class RecipeDetailsComponent {
 
   currentRecipe: Recipe = new Recipe();
 
-  similarRecipe: Recipe[] = [];
+  getSimilarRecipe: Recipe[] = [];
+  showSimilarRecipe: Recipe[] = [];
   ingredientList: Ingredients[] = [];
 
   newItem: Grocery = new Grocery();
@@ -28,7 +29,6 @@ export class RecipeDetailsComponent {
     const routeId = this.actRoute.snapshot.paramMap.get("id") ?? "";
     this.id = parseInt(routeId);
     this.recipeService.findRecipeById(this.id).subscribe(foundRecipe => {
-      console.log(foundRecipe);
       this.currentRecipe = foundRecipe;
       this.ingredientList = this.currentRecipe.extendedIngredients;
       this.findSimilarRecipe();
@@ -39,9 +39,19 @@ export class RecipeDetailsComponent {
     const routeId = this.actRoute.snapshot.paramMap.get("id") ?? "";
     this.id = parseInt(routeId);
     this.recipeService.findSimilarRecipe(this.id).subscribe(response => {
-      console.log(response);
-      this.similarRecipe = response
-    })
+      this.getSimilarRecipe = response;
+      this.getRecipeInfo();
+    });
+  }
+
+  getRecipeInfo() {
+    console.log(this.getSimilarRecipe);
+    for (let recipe of this.getSimilarRecipe) {
+      this.id = recipe.id;
+      this.recipeService.findRecipeById(this.id).subscribe(response => {
+        this.showSimilarRecipe.push(response);
+      })
+    }
   }
 
   addToList(name: string) {
