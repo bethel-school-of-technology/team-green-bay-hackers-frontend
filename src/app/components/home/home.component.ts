@@ -11,42 +11,31 @@ import { UserService } from 'src/app/services/user.service';
 })
 
 export class HomeComponent {
- //here
+  //here
   constructor(private userService: UserService) { }
 
   displayMessage: boolean = false;
   user: User = new User();
 
-  welcomeMessage(){
-    
-    const userToken = localStorage.getItem('tokenName');
-    let headers = new HttpHeaders().set("Authorization", 'Bearer '  + userToken);
-
-    // var username = this.httpContext.user.findFirst(claimTypes.main).value;
-
-    if(userToken != null){
-      console.log("Welcome " + userToken);
-      this.displayMessage = true;
-    }
-
-    this.userService.getUserInfo(3).subscribe(response => {
-      //Find a way to get user info
-      //Find a way to get the user ID
-      console.log(response);
-      this.user = response;
-    })
-  }
-
-  // getUserInfo(){
-  //   this.userService.getUserInfo(3).subscribe(response => {
-  //     console.log(response);
-  //     this.user = response;
-  //   })
-  // }
-
-
-
-  ngOnInit(): void{
+  ngOnInit(): void {
     this.welcomeMessage();
   }
+
+  welcomeMessage() {
+    const userToken = localStorage.getItem('tokenName');
+    const userId = parseInt(localStorage.getItem('userId')!);
+    this.userService.getUserInfo(userId).subscribe(response => {
+      console.log(response);
+      this.user = response;
+      if (userToken != null) {
+        console.log("Welcome " + this.user.username);
+        this.displayMessage = true;
+      }
+    });
+  }
+
+  signOut() {
+    localStorage.clear();
+  }
+
 }

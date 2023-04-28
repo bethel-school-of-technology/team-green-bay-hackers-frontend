@@ -9,37 +9,42 @@
     </div>
 </section>
 
-<h3>Random Recipes: </h3>
-<div class="random-recipe-area">
-    <div class="card-div" *ngFor="let recipe of randomRecipes">
-        <mat-card class="recipe-card">
-            <div class="recipe-photo">
-                <img mat-card-image class="recipe-image" [src]="recipe.image" [routerLink]='["/recipes", recipe.id]'>
-            </div>
-            <mat-card-header>
-                <mat-card-title class="mat-card-link">{{recipe.title}}</mat-card-title>
-                <!-- <mat-card-subtitle>Subtitle</mat-card-subtitle> -->
-            </mat-card-header>
-            <mat-card-content [routerLink]='["/recipes", recipe.id]'>
-                <p>
-                    Description if we're going to have one.
-                </p>
-            </mat-card-content>
-        </mat-card>
-    </div>
-</div>
+<div *ngIf="displaySearch; then searchRecipes else randomRecipes"></div>
 
-<h3>Search Results: </h3>
-<div class="recipe-area">
-    <div class="search-results" *ngIf="recipeList">
-        <div *ngFor="let recipe of recipeList">
-            <mat-card class="recipe-card">
+<ng-template #searchRecipes>
+    <h3>Search Results: </h3>
+    <div class="recipe-area">
+        <div class="search-results" *ngIf="recipeList">
+            <div *ngFor="let recipe of recipeList">
+                <mat-card class="recipe-card" [routerLink]='["/recipes", recipe.id]'>
+                    <div class="recipe-photo">
+                        <img mat-card-image class="recipe-image" [src]="recipe.image">
+                    </div>
+                    <mat-card-header>
+                        <mat-card-title class="mat-card-link">{{recipe.title}}</mat-card-title>
+                        <mat-card-subtitle>Subtitle</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <p>
+                            Description if we're going to have one.
+                        </p>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #randomRecipes>
+    <h3>Random Recipes: </h3>
+    <div class="random-recipe-area">
+        <div class="card-div" *ngFor="let recipe of randomRecipesList">
+            <mat-card class="recipe-card" [routerLink]='["/recipes", recipe.id]'>
                 <div class="recipe-photo">
                     <img mat-card-image class="recipe-image" [src]="recipe.image">
                 </div>
                 <mat-card-header>
                     <mat-card-title class="mat-card-link">{{recipe.title}}</mat-card-title>
-                    <mat-card-subtitle>Subtitle</mat-card-subtitle>
                 </mat-card-header>
                 <mat-card-content [routerLink]='["/recipes", recipe.id]'>
                     <p>
@@ -49,4 +54,4 @@
             </mat-card>
         </div>
     </div>
-</div>
+</ng-template>

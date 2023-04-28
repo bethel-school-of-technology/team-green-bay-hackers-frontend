@@ -21,6 +21,8 @@ export class UserService {
     return this.http.post(`${this.URL}/login`, {username, password})
     .pipe(tap((response: any) => {
       localStorage.setItem('tokenName', response.token);
+      localStorage.setItem('userName', response.userName);
+      localStorage.setItem('userId', response.thisUser);
     }))
   }
 
