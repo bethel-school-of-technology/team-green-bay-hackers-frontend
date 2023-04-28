@@ -7,12 +7,11 @@
   <div *ngIf="displayMessage; then signedIn else notSignedIn"></div>
   <div>
     <ng-template #signedIn>
-      <p>Welcome, <span class="userstyle">{{user.username}}</span> ||
-        <a href="" (click)="signOut()">Sign Out</a>
+      <p>Welcome, <span class="userstyle">{{user.username}}</span>
       </p>
     </ng-template>
     <ng-template #notSignedIn>
-      <a href="/sign-in">Sign In</a>
+      <a href="/sign-in" class="userstyle">Sign In</a>
     </ng-template>
 
   </div>
@@ -25,10 +24,15 @@
 
 
   <mat-menu class="mat-menu" #menu="matMenu">
-    <a href="/sign-up"><button mat-menu-item>Sign Up</button></a>
-    <a href="/sign-in"><button mat-menu-item>Sign In</button></a>
+    <ng-template #signedIn>
+      <a href="/sign-up"><button mat-menu-item>Sign Up</button></a>
+      <a href="/sign-in"><button mat-menu-item>Sign In</button></a>
+    </ng-template>
     <a href="/recipes"><button mat-menu-item>Recipes</button></a>
     <a href="/grocery-list"><button mat-menu-item>Grocery List</button></a>
+    <ng-template #signedIn>
+      <a href="" (click)="signOut()"><button mat-menu-item>Sign Out</button></a>
+    </ng-template>
   </mat-menu>
 </mat-toolbar>
 <router-outlet></router-outlet>
