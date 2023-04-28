@@ -1,15 +1,25 @@
-<form (ngSubmit)="addGrocery()">
-    <h1>ADD NEW GROCERY ITEM</h1>
-    <span>Item Name  </span>
-    <input placeholder="Enter the item name" type="text" [(ngModel)]="newGrocery.title" name="title"><br><br>
-   
-     <!-- Feature that we could add later? - Blake
-    <span>In Your Cart? </span>
-    <input placeholder="Enter status" type="text" name="status" [(ngModel)]="addGrocery"><br><br>
-    <span>Price </span>
-    <input placeholder="Enter price" type="number" name="price" [(ngModel)]="addGrocery"><br><br> -->
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <mat-card class="first-card">
+                <mat-card-content class="hero-search">
+                    <form (ngSubmit)="addGrocery()">
+                        <h1 class="hero-title">Add a Grocery Item</h1>
+                        <!-- <span class="input-title">Item Name  </span> Not sure that we need this? - Blake --> 
+                        <input placeholder="Enter the item name" type="text" [(ngModel)]="newGrocery.title" name="title"><br><br>
+                    
+                        <!-- Feature that we could add later? - Blake
+                        <span>In Your Cart? </span>
+                        <input placeholder="Enter status" type="text" name="status" [(ngModel)]="addGrocery"><br><br>
+                        <span>Price </span>
+                        <input placeholder="Enter price" type="number" name="price" [(ngModel)]="addGrocery"><br><br> -->
 
-<button>
-        Add Item
-    </button>
-</form>
+                    <button class="add-btn">
+                            Add to List
+                        </button>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </section>
+</body>

@@ -1,0 +1,71 @@
+body {
+    background-color:rgb(232, 232, 232)
+}
+.add-btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    border-color: #9FD650;
+    background-color: #9FD650;
+    color: white;
+    margin: 6px 8px 6px 8px;
+    min-width: 88px;
+    border-radius: 3px;
+    font-size: 14px;
+    text-align: center;
+    text-decoration:none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-btn:hover {
+    background-color: rgb(172, 170, 170);
+}
+
+.hero-title {
+    color: #333333;
+    margin-bottom: 20px;
+    font-size: xx-large;
+    font-weight: 400;
+}
+
+.first-card {
+    width: 50%;
+    max-width: 600px;
+    max-height: 300px;
+    min-width: 350px;
+    padding-bottom: 5%;
+    margin: auto;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+  }
+
+  .hero-search {
+    display: block;
+    justify-content: center;
+  }
+
+  .hero {
+    color: white;
+    padding: 100px 0;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .hero-content {
+    margin: 0 auto;
+    text-align: center;
+  }
+    
+  input {
+    padding: 10px;
+    border-radius: 5px;
+    border: solid;
+    border-width: 2px;
+    border-color: #9FD650;
+    width: 50%;
+    margin-right: 10px;
+  }
+
+  .input-title {
+    color: #333333;
+  }

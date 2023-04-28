@@ -7,7 +7,7 @@
   <div *ngIf="displayMessage; then signedIn else notSignedIn"></div>
   <div>
     <ng-template #signedIn>
-      <p>Welcome, {{user.username}} ||
+      <p>Welcome, <span class="userstyle">{{user.username}}</span> ||
         <a href="" (click)="signOut()">Sign Out</a>
       </p>
     </ng-template>
@@ -20,6 +20,9 @@
   <button mat-button class="menu-button" [matMenuTriggerFor]="menu">
     <mat-icon>menu</mat-icon>
   </button>
+
+
+
 
   <mat-menu class="mat-menu" #menu="matMenu">
     <a href="/sign-up"><button mat-menu-item>Sign Up</button></a>
