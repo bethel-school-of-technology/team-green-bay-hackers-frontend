@@ -22,3 +22,12 @@
   a {
     text-decoration: none;
   }
+
+  .welcome {
+    padding-right: 25px;
+  }
+
+  .userstyle {
+    font-weight: 700;
+    color: #9FD650;
+  }

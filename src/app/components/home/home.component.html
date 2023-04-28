@@ -4,14 +4,16 @@
 
   <div class="spacer"></div>
 
+    <!-- <div>Welcome</div> -->
+  <div *ngIf="displayMessage" class="welcome">
+    <p>Welcome, <span class="userstyle">{{user.username}}</span></p>
+  </div>
+
   <button mat-button class="menu-button" [matMenuTriggerFor]="menu">
     <mat-icon>menu</mat-icon>
   </button>
 
-  <!-- <div>Welcome</div> -->
-  <div *ngIf="displayMessage">
-    <p>Welcome, {{user.username}}</p>
-  </div>
+
 
 
   <mat-menu class="mat-menu" #menu="matMenu">
