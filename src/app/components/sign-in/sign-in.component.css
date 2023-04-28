@@ -66,9 +66,13 @@ body {
   .first-card {
     width: 50%;
     max-width: 600px;
-    max-height: 300px;
     min-width: 350px;
-    padding-bottom: 5%;
+    padding-bottom: 2%;
     margin: auto;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
   }
+
+  .account {
+    color: #333333;
+  }
+  
