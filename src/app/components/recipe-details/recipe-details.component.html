@@ -5,10 +5,13 @@
         </div>
         <mat-card-header>
             <mat-card-title class="mat-card-link">{{currentRecipe.title}}</mat-card-title>
-            <mat-card-subtitle>Subtitle</mat-card-subtitle>
+            <mat-card-subtitle>
+                <p>Minutes to Make: {{currentRecipe.readyInMinutes}}</p>
+                <p>Servings Made: {{currentRecipe.servings}}</p>
+            </mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
-            <a>
+            <a href="{{currentRecipe.sourceUrl}}">
                 {{currentRecipe.sourceUrl}}
             </a>
             <p *ngFor="let ing of ingredientList">{{ing.name}}
@@ -24,12 +27,9 @@
         </div>
         <mat-card-header>
             <mat-card-title class="mat-card-link">{{recipe.title}}</mat-card-title>
-            <mat-card-subtitle>Subtitle</mat-card-subtitle>
+            <mat-card-subtitle></mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
-            <p>
-                Description if we're going to have one.
-            </p>
         </mat-card-content>
     </mat-card>
 </div>
