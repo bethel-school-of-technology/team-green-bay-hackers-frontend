@@ -1,35 +1,37 @@
-<div class="recipe-area">
-    <mat-card class="recipe-card">
-        <div class="recipe-photo">
-            <img mat-card-image class="recipe-image" [src]="currentRecipe.image">
-        </div>
-        <mat-card-header>
-            <mat-card-title class="mat-card-link">{{currentRecipe.title}}</mat-card-title>
-            <mat-card-subtitle>Subtitle</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-            <a>
-                {{currentRecipe.sourceUrl}}
-            </a>
-            <p *ngFor="let ing of ingredientList">{{ing.name}}
-                <button (click)="addToList(ing.name)">Add to Shopping List</button>
-            </p>
-        </mat-card-content>
-    </mat-card>
-</div>
-<div class="recipe-area" *ngFor="let recipe of showSimilarRecipe">
-    <mat-card class="recipe-card" [routerLink]='["/recipes", recipe.id]'>
-        <div class="recipe-photo">
-            <img mat-card-image class="recipe-image" [src]="recipe.image">
-        </div>
-        <mat-card-header>
-            <mat-card-title class="mat-card-link">{{recipe.title}}</mat-card-title>
-            <mat-card-subtitle>Subtitle</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-            <p>
-                Description if we're going to have one.
-            </p>
-        </mat-card-content>
-    </mat-card>
-</div>
+<body>
+    <div class="recipe-area">
+        <mat-card class="recipe-card">
+            <div class="recipe-photo">
+                <img mat-card-image class="recipe-image" [src]="currentRecipe.image">
+            </div>
+            <mat-card-header id="title">
+                <mat-card-title class="mat-card-link">{{currentRecipe.title}}</mat-card-title>
+                <mat-card-subtitle>Subtitle</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content  id="url">
+                <a>
+                    {{currentRecipe.sourceUrl}}
+                </a>
+                <p  id="button" *ngFor="let ing of ingredientList">{{ing.name}}
+                    <button (click)="addToList(ing.name)">Add to Shopping List</button>
+                </p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="recipe-area" *ngFor="let recipe of showSimilarRecipe">
+        <mat-card class="recipe-card" [routerLink]='["/recipes", recipe.id]'>
+            <div class="recipe-photo">
+                <img mat-card-image class="recipe-image" [src]="recipe.image">
+            </div>
+            <mat-card-header id="title">
+                <mat-card-title class="mat-card-link">{{recipe.title}}</mat-card-title>
+                <mat-card-subtitle>Subtitle</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content id="description">
+                <p>
+                    Details: Description if we're going to have one.
+                </p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</body>
