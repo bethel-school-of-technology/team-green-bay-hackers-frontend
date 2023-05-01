@@ -1,7 +1,7 @@
-/* body {
-        background: radial-gradient(76.31% 268.58% at 50% 50%, #9FD650 0%, #91CA2C 61.05%, #72A60C 100%);
-        mix-blend-mode: normal;
-} */
+body {
+    background: radial-gradient(76.31% 268.58% at 50% 50%, #9FD650 0%, #91CA2C 61.05%, #72A60C 100%);
+    mix-blend-mode: normal;
+}
 
 .recipe-image {
     display: block;
@@ -9,7 +9,7 @@
     margin-right: auto;
     width: 50%;
     margin-top: 10px;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
     transition: box-shadow 0.3s ease;
 
 }
@@ -62,4 +62,28 @@
     /* border-color: black; */
     border-top: solid 3px gray;
     border-radius: 5px;
+}
+
+#random-recipe-area {
+    justify-content: left;
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+}
+
+.recipe-card {
+    margin: 5%;
+    max-width: 90%;
+    display: flex;
+    float: left;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.recipe-card:hover {
+      box-shadow: 1px 1px 5px 1px rgb(136, 136, 136);
+      cursor: pointer;
+      transition: box-shadow 0.3 ease-in-out;
 }
