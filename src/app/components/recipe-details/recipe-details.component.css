@@ -39,6 +39,7 @@
 
 #button {
     display: block;
+    align-items: right;
 }
 
 .recipe-area {
