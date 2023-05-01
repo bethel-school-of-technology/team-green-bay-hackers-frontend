@@ -1,6 +1,6 @@
 <body>
     <div class="recipe-area">
-        <mat-card class="recipe-card">
+        <mat-card class="main-recipe-card">
             <div class="recipe-photo">
                 <img mat-card-image class="recipe-image" [src]="currentRecipe.image">
             </div>
@@ -28,7 +28,7 @@
             </mat-card-content>
         </mat-card>
     </div>
-    <div class="recipe-area" *ngFor="let recipe of showSimilarRecipe">
+    <div class="random-recipe-area" *ngFor="let recipe of showSimilarRecipe">
         <mat-card class="recipe-card" [routerLink]='["/recipes", recipe.id]'>
             <div class="recipe-photo">
                 <img mat-card-image class="recipe-image" [src]="recipe.image">
