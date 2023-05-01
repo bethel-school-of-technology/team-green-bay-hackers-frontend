@@ -8,10 +8,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RecipeService {
 
-  searchSource: string = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=312098b3d19041978ab0a8c5d5bc0a75"
+  searchSource: string = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=d0bc8082617f45edb163dbcb85175b6e"
   searchIdSource: string = "https://api.spoonacular.com/recipes/"
   similarSource: string = "https://api.spoonacular.com/recipes/"
-  randomSource: string = "https://api.spoonacular.com/recipes/random?apiKey=312098b3d19041978ab0a8c5d5bc0a75"
+  randomSource: string = "https://api.spoonacular.com/recipes/random?apiKey=d0bc8082617f45edb163dbcb85175b6e&number=3"
   searchInputParam: string = "&ingredients=";
 
   constructor(private http: HttpClient) { }
@@ -25,7 +25,7 @@ findRecipeById(id: number): Observable<Recipe> {
 }
 
 findSimilarRecipe(id: number): Observable<Recipe[]> {
-  return this.http.get<Recipe[]>(this.similarSource + id + "/similar?apiKey=d0bc8082617f45edb163dbcb85175b6e&number=3")
+  return this.http.get<Recipe[]>(this.similarSource + id + "/similar?apiKey=d0bc8082617f45edb163dbcb85175b6ee&number=3")
 }
 
 findRandomRecipe(): Observable<Random> {
