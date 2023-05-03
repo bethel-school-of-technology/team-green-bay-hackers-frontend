@@ -1,32 +1,36 @@
 <body>
-    <div class="recipe-area">
-        <mat-card class="main-recipe-card">
-            <div class="recipe-photo">
-                <img mat-card-image class="recipe-image" [src]="currentRecipe.image">
-            </div>
-            <mat-card-header id="title">
-                <mat-card-title class="mat-card-link">{{currentRecipe.title}}</mat-card-title>
+    <section class="hero">
+    <div class="hero-content">
+      <mat-card class="first-card">
+        <img mat-card-image class="recipe-image" [src]="currentRecipe.image">
+        <mat-card-content class="recipe-details-content">
+        <div class="header-text">
+            <h1 class="hero-title">{{currentRecipe.title}}</h1>
                 <mat-card-subtitle>
-                    <p>Minutes to Make: {{currentRecipe.readyInMinutes}}</p>
-                    <p>Servings Made: {{currentRecipe.servings}}</p>
+                    <span class="recipe-subtitle">Minutes to Make: {{currentRecipe.readyInMinutes}}</span>
+                    <br>
+                    <span class="recipe-subtitle">Servings Made: {{currentRecipe.servings}}</span>
+                    <br>
+                        <a href = "{{currentRecipe.sourceUrl}}">
+                        Recipe Directions                        
+                        </a>
                 </mat-card-subtitle>
-            </mat-card-header>
-            <mat-card-content id="url">
-                <button>
-                    <a href = "{{currentRecipe.sourceUrl}}">
-                    To Recipe Directions                        
-                    </a>
+                <hr>
+        
 
-                </button>
-                <div *ngFor="let ing of ingredientList">
-                    <p>
-                        {{ing.name}}
-                        <button (click)="addToList(ing.name)">Add to Shopping List</button>
-                    </p>
-                    
-                </div>
-            </mat-card-content>
-        </mat-card>
+          <div *ngFor="let ing of ingredientList" class="hero-search">
+                <span class="ingredient-name">{{ing.name}}</span>
+                <button type="submit" (click)="addToList(ing.name)">Add to Shopping List</button> 
+        </div>
+    </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </section>
+
+  <section class="related-recipes">
+    <div class="random-recipe-title">
+        <span>Related Recipes</span>
     </div>
     <div class="random-recipe-area" *ngFor="let recipe of showSimilarRecipe">
         <mat-card class="recipe-card" [routerLink]='["/recipes", recipe.id]'>
@@ -37,8 +41,11 @@
                 <mat-card-title class="mat-card-link">{{recipe.title}}</mat-card-title>
                 <mat-card-subtitle></mat-card-subtitle>
             </mat-card-header>
-            <mat-card-content>
-            </mat-card-content>
         </mat-card>
     </div>
+  </section>
+
+  <br>
+
 </body>
+

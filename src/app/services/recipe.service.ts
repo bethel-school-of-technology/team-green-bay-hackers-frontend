@@ -8,10 +8,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RecipeService {
 
-  searchSource: string = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=d0bc8082617f45edb163dbcb85175b6e"
+  searchSource: string = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=bf01a60d746a4dfba1e815d0b2728d74"
   searchIdSource: string = "https://api.spoonacular.com/recipes/"
   similarSource: string = "https://api.spoonacular.com/recipes/"
-  randomSource: string = "https://api.spoonacular.com/recipes/random?apiKey=d0bc8082617f45edb163dbcb85175b6e&number=3"
+  randomSource: string = "https://api.spoonacular.com/recipes/random?apiKey=bf01a60d746a4dfba1e815d0b2728d74&number=3"
   searchInputParam: string = "&ingredients=";
 
   constructor(private http: HttpClient) { }
@@ -21,11 +21,11 @@ findRecipe(searchInput: string): Observable<Recipe[]> {
 }
 
 findRecipeById(id: number): Observable<Recipe> {
-  return this.http.get<Recipe>(this.searchIdSource + id + "/information?apiKey=d0bc8082617f45edb163dbcb85175b6e")
+  return this.http.get<Recipe>(this.searchIdSource + id + "/information?apiKey=bf01a60d746a4dfba1e815d0b2728d74")
 }
 
 findSimilarRecipe(id: number): Observable<Recipe[]> {
-  return this.http.get<Recipe[]>(this.similarSource + id + "/similar?apiKey=d0bc8082617f45edb163dbcb85175b6e&number=3")
+  return this.http.get<Recipe[]>(this.similarSource + id + "/similar?apiKey=bf01a60d746a4dfba1e815d0b2728d74&number=3")
 }
 
 findRandomRecipe(): Observable<Random> {
