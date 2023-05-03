@@ -82,11 +82,12 @@
       transition: box-shadow 0.3 ease-in-out;
 }
 
-body {
-    background: radial-gradient(76.31% 268.58% at 50% 50%, #9FD650 0%, #91CA2C 61.05%, #72A60C 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
-    mix-blend-mode: normal;
+.body {
+    background-color: #9FD650;
     width: auto;
     height: auto;
+    padding-bottom: 10%;
+    overflow: hidden;
 }
 .hero {
     color: white;
@@ -199,7 +200,6 @@ hr {
   }
 
   .related-recipes {
-    padding-left: 4%;
     margin-top: 5%;
     margin-bottom: 9%;
     background-color: none;
@@ -212,6 +212,7 @@ hr {
     white-space: nowrap;
     text-overflow: ellipsis;
     width: 24ch;
+    margin-bottom: 3%;
   }
 
   .random-recipe-title {
@@ -219,7 +220,7 @@ hr {
     margin-top: 20px;
     margin-bottom: 20px;
     font-size: xx-large;
-    font-weight: 500;
+    font-weight: 700;
     text-align: center;
     
   }
